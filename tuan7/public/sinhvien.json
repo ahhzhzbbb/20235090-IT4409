@@ -1,20 +1,20 @@
 [
   {
     "id": "SV001",
-    "name": "Nguyen Van An",
-    "className": "CNTT1-K68",
-    "email": "an.nguyen@university.edu.vn"
+    "name": "Pham Minh Hoang",
+    "className": "IT1-K68",
+    "email": "hoang.pm235090@hust.sis.edu.vn"
   },
   {
     "id": "SV002",
-    "name": "Tran Thi Bich",
-    "className": "CNTT2-K68",
-    "email": "bich.tran@university.edu.vn"
+    "name": "Nguyen Khanh Hung",
+    "className": "IT1-K68",
+    "email": "hung.nk235100@hust.sis.edu.vn"
   },
   {
     "id": "SV003",
-    "name": "Le Quang Huy",
-    "className": "CNTT3-K68",
-    "email": "huy.le@university.edu.vn"
+    "name": "Tran Phuc Long",
+    "className": "IT1-K68",
+    "email": "long.tp235100@hust.sis.edu.vn"
   }
 ]
