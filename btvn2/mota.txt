@@ -1,0 +1,16 @@
+Bài 1:
+Trong <header>, trang hiển thị tiêu đề “Trang Thông Tin Lịch Học” được căn giữa bằng thuộc tính align="center" và một đường kẻ ngang (<hr>) để tách phần tiêu đề với nội dung.
+Phần thông tin sinh viên được đặt trong một <section>
+Sử dụng bảng (<table>) để bố trí ảnh chân dung ở bên trái và các thông tin như họ tên, MSSV, ngày sinh, lớp và email ở bên phải.
+Phần tiếp theo của trang là bảng thời khóa biểu, được tạo bằng thẻ <table> với các thành phần caption, thead và tbody để mô tả tiêu đề bảng và dữ liệu chi tiết. Bảng hiển thị các thông tin như số thứ tự, tên môn học, giảng viên, thời gian học và phòng học cho từng môn trong học kỳ.
+Sau bảng là một đoạn cảm nhận ngắn được đặt trong thẻ <p> và định dạng nghiêng bằng thẻ <i>.
+Cuối cùng, phần <footer> hiển thị MSSV và ngày tạo trang
+
+
+Bài 2:
+Phần <head> khai báo các thông tin cấu hình, thẻ viewport để hiển thị tốt trên thiết bị di động, tiêu đề trang và biểu tượng lấy từ website của Google
+Phần <header> tạo thanh điều hướng phía trên bằng bảng <table>
+Các liên kết như Gmail, Hình ảnh và Đăng nhập bằng thuộc tính align="right". Phần <main> đặt ở giữa trang bằng thẻ <center>
+Hiển thị logo Google thông qua thẻ <img> và tạo form tìm kiếm với thẻ <form> gửi dữ liệu bằng phương thức GET đến địa chỉ tìm kiếm của Google. Trong form có ô nhập văn bản (<input type="text">) để người dùng nhập từ khóa
+Bên dưới form là phần gợi ý chọn ngôn ngữ, được tạo bằng các thẻ <a> liên kết đến Google với tham số ngôn ngữ khác nhau.
+Cuối cùng, phần <footer> sử dụng các bảng để bố trí các liên kết thông tin như giới thiệu, quảng cáo, điều khoản và cài đặt.

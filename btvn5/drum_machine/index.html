@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Drum Machine</title>
+    <style>
+      :root {
+        --bg: #10131a;
+        --panel: #1a1f2b;
+        --pad: #263047;
+        --pad-active: #ff9f1c;
+        --text: #f7f8fb;
+        --muted: #aeb7ca;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: radial-gradient(circle at 20% 20%, #1d2540, var(--bg));
+        color: var(--text);
+      }
+
+      #drum-machine {
+        width: min(92vw, 620px);
+        padding: 20px;
+        border-radius: 16px;
+        background: var(--panel);
+        border: 1px solid #2f3a53;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+      }
+
+      #display {
+        margin: 0 0 14px;
+        padding: 12px 14px;
+        min-height: 48px;
+        border-radius: 10px;
+        background: #0f1420;
+        color: var(--muted);
+        border: 1px solid #2f3a53;
+      }
+
+      #pad-bank {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+      }
+
+      .drum-pad {
+        height: 90px;
+        border: 0;
+        border-radius: 12px;
+        background: var(--pad);
+        color: var(--text);
+        font-size: 1.5rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: transform 120ms ease, background 120ms ease;
+      }
+
+      .drum-pad:active,
+      .drum-pad.active {
+        background: var(--pad-active);
+        color: #141414;
+        transform: scale(0.97);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="drum-machine">
+      <p id="display">Press a pad or use keys Q W E A S D Z X C</p>
+      <div id="pad-bank">
+        <button class="drum-pad" id="Heater-1" data-name="Heater 1">
+          Q
+          <audio
+            class="clip"
+            id="Q"
+            src="https://cdn.freecodecamp.org/curriculum/drum/Heater-1.mp3"
+          ></audio>
+        </button>
+        <button class="drum-pad" id="Heater-2" data-name="Heater 2">
+          W
+          <audio
+            class="clip"
+            id="W"
+            src="https://cdn.freecodecamp.org/curriculum/drum/Heater-2.mp3"
+          ></audio>
+        </button>
+        <button class="drum-pad" id="Heater-3" data-name="Heater 3">
+          E
+          <audio
+            class="clip"
+            id="E"
+            src="https://cdn.freecodecamp.org/curriculum/drum/Heater-3.mp3"
+          ></audio>
+        </button>
+        <button class="drum-pad" id="Heater-4" data-name="Heater 4">
+          A
+          <audio
+            class="clip"
+            id="A"
+            src="https://cdn.freecodecamp.org/curriculum/drum/Heater-4_1.mp3"
+          ></audio>
+        </button>
+        <button class="drum-pad" id="Clap" data-name="Clap">
+          S
+          <audio
+            class="clip"
+            id="S"
+            src="https://cdn.freecodecamp.org/curriculum/drum/Heater-6.mp3"
+          ></audio>
+        </button>
+        <button class="drum-pad" id="Open-HH" data-name="Open-HH">
+          D
+          <audio
+            class="clip"
+            id="D"
+            src="https://cdn.freecodecamp.org/curriculum/drum/Dsc_Oh.mp3"
+          ></audio>
+        </button>
+        <button class="drum-pad" id="Kick-n-Hat" data-name="Kick-n'-Hat">
+          Z
+          <audio
+            class="clip"
+            id="Z"
+            src="https://cdn.freecodecamp.org/curriculum/drum/Kick_n_Hat.mp3"
+          ></audio>
+        </button>
+        <button class="drum-pad" id="Kick" data-name="Kick">
+          X
+          <audio
+            class="clip"
+            id="X"
+            src="https://cdn.freecodecamp.org/curriculum/drum/RP4_KICK_1.mp3"
+          ></audio>
+        </button>
+        <button class="drum-pad" id="Closed-HH" data-name="Closed-HH">
+          C
+          <audio
+            class="clip"
+            id="C"
+            src="https://cdn.freecodecamp.org/curriculum/drum/Cev_H2.mp3"
+          ></audio>
+        </button>
+      </div>
+    </div>
+
+    <script>
+      const display = document.getElementById("display");
+      const pads = document.querySelectorAll(".drum-pad");
+      const validKeys = ["Q", "W", "E", "A", "S", "D", "Z", "X", "C"];
+
+      function setActivePad(pad) {
+        pad.classList.add("active");
+        setTimeout(() => pad.classList.remove("active"), 120);
+      }
+
+      function playPad(pad) {
+        const audio = pad.querySelector(".clip");
+        audio.currentTime = 0;
+        audio.play();
+        display.innerText = pad.dataset.name;
+        setActivePad(pad);
+      }
+
+      pads.forEach((pad) => {
+        pad.addEventListener("click", () => playPad(pad));
+      });
+
+      document.addEventListener("keydown", (event) => {
+        const key = event.key.toUpperCase();
+        if (!validKeys.includes(key)) return;
+        const audio = document.getElementById(key);
+        const pad = audio.parentElement;
+        playPad(pad);
+      });
+    </script>
+  </body>
+</html>

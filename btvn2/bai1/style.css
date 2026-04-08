@@ -1,0 +1,51 @@
+main {
+  padding: 16px;
+}
+
+@media (max-width: 600px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+    
+    .sidenav {
+        width: 100%;
+        min-width: auto;
+    }
+}
+
+.content-wrapper {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.sidenav {
+  width: 280px;
+  min-width: 280px;
+  background-color: #f4f4f4;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.sidenav img {
+  display: block;
+  margin: 0 auto 10px;
+  .sticky {
+    position: sticky;
+    top: 20px;
+  }
+}
+
+.sidenav h2 {
+  text-align: center;
+}
+
+.sidenav p {
+  margin: 5px 0;
+}
+
+.timetable {
+  flex: 1;
+  overflow-x: auto;
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minh hoa co await va khong await</title>
+</head>
+<body>
+  <h1>Minh hoa Promise: co await va khong await</h1>
+
+  <ol>
+    <li>Nut 1: Dung <code>async/await</code>.</li>
+    <li>Nut 2: Khong dung <code>await</code>, dung <code>.then()</code>.</li>
+    <li>Quan sat thu tu log de thay su khac nhau.</li>
+  </ol>
+
+  <button id="runWithAwait">Demo co await</button>
+  <button id="runWithoutAwait">Demo khong await</button>
+  <button id="runError">Demo loi (co await)</button>
+  <button id="clearLog">Xoa log</button>
+
+  <pre id="log"></pre>
+
+  <script>
+    const logEl = document.getElementById("log");
+    const runWithAwaitBtn = document.getElementById("runWithAwait");
+    const runWithoutAwaitBtn = document.getElementById("runWithoutAwait");
+    const runErrorBtn = document.getElementById("runError");
+    const clearLogBtn = document.getElementById("clearLog");
+
+    function log(message) {
+      logEl.textContent += message + "\n";
+    }
+
+    function fakeApi(shouldFail = false) {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          if (shouldFail) {
+            reject(new Error("Khong lay duoc du lieu"));
+            return;
+          }
+          resolve("Data received");
+        }, 1000);
+      });
+    }
+
+    async function loadDataWithAwait(shouldFail = false) {
+      log("1) [await] Before await");
+      try {
+        const data = await fakeApi(shouldFail);
+        log("3) [await] After await: " + data);
+      } catch (error) {
+        log("3) [await] After await (error): " + error.message);
+      }
+    }
+
+    async function runWithAwait(shouldFail = false) {
+      log("=== Demo co await ===");
+      const task = loadDataWithAwait(shouldFail);
+      log("2) [await] Log ngoai async chay ngay");
+      await task;
+      log("=== Ket thuc ===");
+      log("");
+    }
+
+    function runWithoutAwait() {
+      log("=== Demo khong await (.then) ===");
+      log("1) [no-await] Goi fakeApi()");
+      const promise = fakeApi(false);
+      log("2) [no-await] Khong doi ket qua, code chay tiep");
+      promise.then((data) => {
+        log("3) [no-await] Nhan ket qua trong .then: " + data);
+        log("=== Ket thuc ===");
+        log("");
+      }).catch((error) => {
+        log("3) [no-await] Loi trong .then: " + error.message);
+        log("=== Ket thuc ===");
+        log("");
+      });
+    }
+
+    runWithAwaitBtn.addEventListener("click", () => {
+      runWithAwait(false);
+    });
+
+    runWithoutAwaitBtn.addEventListener("click", () => {
+      runWithoutAwait();
+    });
+
+    runErrorBtn.addEventListener("click", () => {
+      runWithAwait(true);
+    });
+
+    clearLogBtn.addEventListener("click", () => {
+      logEl.textContent = "";
+    });
+
+    log("San sang. Bam cac nut de chay tung truong hop.");
+  </script>
+</body>
+</html>

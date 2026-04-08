@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <main class="app-shell">
+      <section class="weather-card">
+        <h1>City Weather Radar</h1>
+        <p class="subtitle">Pick a city to load current weather conditions.</p>
+
+        <div class="controls">
+          <select id="city-select" aria-label="Choose city">
+            <option value=""></option>
+            <option value="new york">New York</option>
+            <option value="los angeles">Los Angeles</option>
+            <option value="chicago">Chicago</option>
+            <option value="paris">Paris</option>
+            <option value="tokyo">Tokyo</option>
+            <option value="london">London</option>
+          </select>
+          <button id="get-weather-btn" type="button">Get Weather</button>
+        </div>
+
+        <section id="weather-panel" class="hidden" aria-live="polite">
+          <div class="top-row">
+            <img id="weather-icon" alt="Weather icon" />
+            <div>
+              <p id="location" class="location">N/A</p>
+              <p id="weather-main" class="weather-main">N/A</p>
+            </div>
+          </div>
+
+          <div class="stats-grid">
+            <p>Main Temp: <span id="main-temperature">N/A</span></p>
+            <p>Feels Like: <span id="feels-like">N/A</span></p>
+            <p>Humidity: <span id="humidity">N/A</span></p>
+            <p>Wind Speed: <span id="wind">N/A</span></p>
+            <p>Wind Gust: <span id="wind-gust">N/A</span></p>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

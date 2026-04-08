@@ -1,0 +1,34 @@
+[
+  {
+    "studentId": "SV001",
+    "semester": "2025.1",
+    "courseCode": "IT101",
+    "courseName": "Nhap mon lap trinh",
+    "midtermScore": 8.0,
+    "finalScore": 8.5
+  },
+  {
+    "studentId": "SV001",
+    "semester": "2025.1",
+    "courseCode": "MA102",
+    "courseName": "Giai tich 1",
+    "midtermScore": 7.2,
+    "finalScore": 7.8
+  },
+  {
+    "studentId": "SV002",
+    "semester": "2025.2",
+    "courseCode": "IT201",
+    "courseName": "Cau truc du lieu va giai thuat",
+    "midtermScore": 8.4,
+    "finalScore": 9.0
+  },
+  {
+    "studentId": "SV002",
+    "semester": "2025.2",
+    "courseCode": "PH101",
+    "courseName": "Vat ly dai cuong",
+    "midtermScore": 7.0,
+    "finalScore": 7.3
+  }
+]

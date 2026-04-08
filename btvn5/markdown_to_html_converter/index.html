@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown to HTML Converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Markdown to HTML Converter</h1>
+    <div id="container">
+        <div class="container">
+            <h2>Markdown Input:</h2>
+            <textarea id="markdown-input" placeholder="Enter your markdown here..."></textarea>
+        </div>
+        <div class="container">
+            <h2>Raw HTML Output:</h2>
+            <div id="html-output"></div>
+        </div>
+        <div class="container">
+            <h2>HTML Preview:</h2>
+            <div id="preview"></div>
+        </div>
+    </div>
+    <script>
+        function convertMarkdown() {
+            const markdownInput = document.getElementById('markdown-input');
+            let html = markdownInput.value;
+
+            html = html.replace(/^\s*###\s+(.+)$/gm, '<h3>$1</h3>');
+            html = html.replace(/^\s*##\s+(.+)$/gm, '<h2>$1</h2>');
+            html = html.replace(/^\s*#\s+(.+)$/gm, '<h1>$1</h1>');
+            html = html.replace(/^\s*>\s+(.+)$/gm, '<blockquote>$1</blockquote>');
+            html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img alt="$1" src="$2">');
+            html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+            html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+            html = html.replace(/__(.+?)__/g, '<strong>$1</strong>');
+            html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
+            html = html.replace(/_(.+?)_/g, '<em>$1</em>');
+
+            return html;
+        }
+
+        const markdownInput = document.getElementById('markdown-input');
+        const htmlOutput = document.getElementById('html-output');
+        const preview = document.getElementById('preview');
+
+        function updateOutput() {
+            const converted = convertMarkdown();
+            htmlOutput.textContent = converted;
+            preview.innerHTML = converted;
+        }
+
+        markdownInput.addEventListener('input', updateOutput);
+        updateOutput();
+    </script>
+</body>
+
+</html>

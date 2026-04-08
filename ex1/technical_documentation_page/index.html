@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Frontend Quick Documentation</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<nav id="navbar">
+		<header>Frontend Quick Documentation</header>
+		<a class="nav-link" href="#Introduction">Introduction</a>
+		<a class="nav-link" href="#HTML_Basics">HTML Basics</a>
+		<a class="nav-link" href="#CSS_Selectors">CSS Selectors</a>
+		<a class="nav-link" href="#Flexbox_Layout">Flexbox Layout</a>
+		<a class="nav-link" href="#Responsive_Design">Responsive Design</a>
+		<a class="nav-link" href="#Accessibility_Tips">Accessibility Tips</a>
+	</nav>
+
+	<main id="main-doc">
+		<section class="main-section" id="Introduction">
+			<header>Introduction</header>
+			<p>
+				This page is a compact guide to core frontend concepts for beginners.
+			</p>
+			<p>
+				You can read each section in order, or jump directly from the left navigation.
+			</p>
+			<code>&lt;!DOCTYPE html&gt;</code>
+		</section>
+
+		<section class="main-section" id="HTML_Basics">
+			<header>HTML Basics</header>
+			<p>
+				HTML gives structure to a page using semantic elements like headings, sections, and links.
+			</p>
+			<p>
+				Good structure helps both users and search engines understand your content.
+			</p>
+			<ul>
+				<li>Use one main heading to define the page topic.</li>
+				<li>Use lists when you have grouped items.</li>
+			</ul>
+			<code>&lt;h1&gt;Welcome&lt;/h1&gt;</code>
+		</section>
+
+		<section class="main-section" id="CSS_Selectors">
+			<header>CSS Selectors</header>
+			<p>
+				CSS selectors target elements so you can style them consistently.
+			</p>
+			<p>
+				Start with simple selectors, then move to class combinations as your UI grows.
+			</p>
+			<ul>
+				<li>Element selector: targets all tags of one type.</li>
+				<li>Class selector: targets reusable visual patterns.</li>
+			</ul>
+			<code>.card { border-radius: 8px; }</code>
+		</section>
+
+		<section class="main-section" id="Flexbox_Layout">
+			<header>Flexbox Layout</header>
+			<p>
+				Flexbox is great for one-dimensional layouts such as rows, columns, and navigation bars.
+			</p>
+			<p>
+				It simplifies spacing, alignment, and responsive rearrangement with minimal code.
+			</p>
+			<ul>
+				<li>Use <strong>display: flex</strong> on the parent element.</li>
+				<li>Control alignment with <strong>justify-content</strong> and <strong>align-items</strong>.</li>
+			</ul>
+			<code>.row { display: flex; gap: 12px; }</code>
+		</section>
+
+		<section class="main-section" id="Responsive_Design">
+			<header>Responsive Design</header>
+			<p>
+				Responsive design makes interfaces usable on phones, tablets, and desktops.
+			</p>
+			<p>
+				Combine fluid units, flexible images, and media queries to adapt layout size.
+			</p>
+			<ul>
+				<li>Prefer percentages and <strong>rem</strong> for scalable spacing.</li>
+				<li>Test breakpoints where content starts to feel cramped.</li>
+			</ul>
+			<code>@media (max-width: 768px) { ... }</code>
+		</section>
+
+		<section class="main-section" id="Accessibility_Tips">
+			<header>Accessibility Tips</header>
+			<p>
+				Accessible pages are easier for everyone to use, including people with disabilities.
+			</p>
+			<p>
+				Small improvements such as better contrast and labels have a big impact.
+			</p>
+			<ul>
+				<li>Use descriptive link text instead of “click here”.</li>
+				<li>Always provide alt text for meaningful images.</li>
+			</ul>
+			<code>&lt;img src="avatar.jpg" alt="Profile photo"&gt;</code>
+		</section>
+	</main>
+</body>
+</html>

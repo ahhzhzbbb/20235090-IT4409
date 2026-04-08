@@ -1,0 +1,86 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	line-height: 1.6;
+	color: #1f2937;
+	background: linear-gradient(120deg, #f0f9ff, #ecfeff);
+}
+
+.container {
+	max-width: 900px;
+	margin: 40px auto;
+	padding: 28px;
+	background: #ffffff;
+	border-radius: 18px;
+	box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+#title {
+	margin-top: 0;
+	margin-bottom: 8px;
+	text-align: center;
+	color: #0f766e;
+}
+
+.subtitle {
+	margin-top: 0;
+	text-align: center;
+	color: #334155;
+}
+
+#img-div {
+	margin: 26px 0;
+	padding: 18px;
+	background: #f8fafc;
+	border-radius: 12px;
+}
+
+#image {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	margin: 0 auto;
+	border-radius: 10px;
+}
+
+#img-caption {
+	margin-top: 12px;
+	text-align: center;
+	color: #475569;
+	font-size: 0.95rem;
+}
+
+#tribute-info h2 {
+	color: #0f766e;
+	margin-top: 6px;
+}
+
+#tribute-info ul {
+	padding-left: 22px;
+}
+
+#tribute-info li {
+	margin-bottom: 8px;
+}
+
+.more-link {
+	text-align: center;
+	margin-top: 24px;
+	margin-bottom: 0;
+}
+
+#tribute-link {
+	color: #0f766e;
+	font-weight: 600;
+	text-decoration: none;
+	border-bottom: 1px solid transparent;
+	transition: border-color 0.2s ease;
+}
+
+#tribute-link:hover {
+	border-color: #0f766e;
+}

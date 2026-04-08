@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoundWave Pro - Product Landing Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header id="header">
+        <div class="brand">
+            <img
+                id="header-img"
+                src="https://images.unsplash.com/photo-1518443895471-6c15f4bd4f6d?auto=format&fit=crop&w=300&q=80"
+                alt="SoundWave Pro logo"
+            >
+            <h1>SoundWave Pro</h1>
+        </div>
+
+        <nav id="nav-bar">
+            <a class="nav-link" href="#features">Features</a>
+            <a class="nav-link" href="#how-it-works">How It Works</a>
+            <a class="nav-link" href="#pricing">Pricing</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="section hero">
+            <h2>Studio-Quality Audio, Anywhere You Go</h2>
+            <p>
+                Upgrade your listening setup with adaptive noise cancellation,
+                all-day battery life, and crystal-clear calls.
+            </p>
+
+            <form id="form" action="https://www.freecodecamp.com/email-submit">
+                <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="Enter your email address"
+                    required
+                >
+                <input id="submit" type="submit" value="Get Started">
+            </form>
+        </section>
+
+        <section id="features" class="section">
+            <h2>Features</h2>
+            <div class="feature-grid">
+                <article class="card">
+                    <h3>Adaptive Sound</h3>
+                    <p>Automatically tunes audio based on your environment and activity.</p>
+                </article>
+                <article class="card">
+                    <h3>40-Hour Battery</h3>
+                    <p>Listen all week with fast charging support for busy schedules.</p>
+                </article>
+                <article class="card">
+                    <h3>Premium Build</h3>
+                    <p>Lightweight aluminum frame with soft memory-foam cushions.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="section">
+            <h2>How It Works</h2>
+            <p class="video-intro">Watch a quick demo to hear the difference.</p>
+            <iframe
+                id="video"
+                src="https://www.youtube.com/embed/ysz5S6PUM-U"
+                title="SoundWave Pro demo video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+            ></iframe>
+        </section>
+
+        <section id="pricing" class="section">
+            <h2>Pricing</h2>
+            <div class="pricing-grid">
+                <article class="card">
+                    <h3>Starter</h3>
+                    <p class="price">$99</p>
+                    <p>Essential audio features for daily use.</p>
+                </article>
+                <article class="card">
+                    <h3>Pro</h3>
+                    <p class="price">$169</p>
+                    <p>Best value with advanced noise cancellation.</p>
+                </article>
+                <article class="card">
+                    <h3>Studio</h3>
+                    <p class="price">$229</p>
+                    <p>Top-tier performance for creators and professionals.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

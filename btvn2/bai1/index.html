@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang thông tin lịch học - Phạm Minh Hoàng</title>
+    <style>
+        main {
+        padding: 16px;
+        }
+
+        @media (max-width: 600px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+            
+            .sidenav {
+                width: 100%;
+                min-width: auto;
+            }
+        }
+
+        .content-wrapper {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+        }
+
+        .sidenav {
+        width: 280px;
+        min-width: 280px;
+        background-color: #f4f4f4;
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        }
+
+        .sidenav img {
+        display: block;
+        margin: 0 auto 10px;
+        .sticky {
+            position: sticky;
+            top: 20px;
+        }
+        }
+
+        .sidenav h2 {
+        text-align: center;
+        }
+
+        .sidenav p {
+        margin: 5px 0;
+        }
+
+        .timetable {
+        flex: 1;
+        overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header: Tiêu đề chính của trang -->
+    <header>
+        <h1 align="center">Trang Thông Tin Lịch Học</h1>
+        <hr>
+    </header>
+
+    
+    <!-- Phần thông tin cá nhân sinh viên: ảnh chân dung, họ tên, MSSV và các thông tin khác -->
+    <main>
+        <!-- <section>
+            <h2>Thông tin sinh viên</h2>
+            <table width="100%" cellpadding="10">
+                <tr>
+                    <td width="180" valign="top">
+                        <img src="download.png" alt="Ảnh chân dung Phạm Minh Hoàng" width="160" height="200">
+                    </td>
+                    <td valign="top">
+                        <p><b>Họ tên:</b> PHẠM MINH HOÀNG</p>
+                        <p><b>MSSV:</b> 20235090</p>
+                        <p><b>Ngày sinh:</b> 29/08/2005</p>
+                        <p><b>Giới tính:</b> Nam</p>
+                        <p><b>Lớp:</b> Khoa học máy tính 05-K68</p>
+                        <p><b>Email:</b> hoang.pm235090@sis.hust.edu.vn</p>
+                        <p><b>Nơi sinh:</b> Ninh Bình</p>
+                    </td>
+                </tr>
+            </table>
+        </section> -->
+
+        <div class="content-wrapper">
+            <!-- Side navigation -->
+            <div class="sidenav">
+                <section>
+                    <h2>Thông tin sinh viên</h2>
+                    <img src="download.png" alt="Ảnh chân dung Phạm Minh Hoàng" width="160" height="200">
+                    <p><b>Họ tên:</b> PHẠM MINH HOÀNG</p>
+                    <p><b>MSSV:</b> 20235090</p>
+                    <p><b>Ngày sinh:</b> 29/08/2005</p>
+                    <p><b>Giới tính:</b> Nam</p>
+                    <p><b>Lớp:</b> Khoa học máy tính 05-K68</p>
+                    <p><b>Email:</b> hoang.pm235090@sis.hust.edu.vn</p>
+                    <p><b>Nơi sinh:</b> Ninh Bình</p>
+                </section>
+            </div>
+
+            <!-- Bảng thời khóa biểu với caption, gồm tên môn, giảng viên, ngày giờ, phòng học -->
+            <section class="timetable">
+            <table border="1" cellpadding="8" cellspacing="0" width="100%">
+                <caption><b>Thời Khóa Biểu — Học kỳ 2025.2</b></caption>
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Tên môn học</th>
+                        <th>Tên giảng viên</th>
+                        <th>Ngày giờ học</th>
+                        <th>Phòng học</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td align="center">1</td>
+                        <td>PROJECT II</td>
+                        <td>Nguyễn Duy Hiệp</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td align="center">2</td>
+                        <td>Chủ nghĩa xã hội khoa học</td>
+                        <td>Bùi Thị Quý</td>
+                        <td>Sáng T2, Tuần: 26,28,30,32,35,37,39,41, Tiết 4 - 6 [09:20 - 11:50]</td>
+                        <td>D5-201</td>
+                    </tr>
+                    <tr>
+                        <td align="center">3</td>
+                        <td>Các hệ thống phân tán và ứng dụng</td>
+                        <td>Đỗ Tiến Dũng</td>
+                        <td>Sáng T2, Tuần: 25,27,29,31,34,36,38,40, Tiết 1 - 3 [06:45 - 09:15]</td>
+                        <td>TC-312</td>
+                    </tr>
+                    <tr>
+                        <td align="center">4</td>
+                        <td>Chủ nghĩa xã hội khoa học</td>
+                        <td>Bùi Thị Quý</td>
+                        <td>Sáng T2, Tuần: 25,27,29,31,34,36,38,40, Tiết 4 - 6 [09:20 - 11:50]</td>
+                        <td>D5-201</td>
+                    </tr>
+                    <tr>
+                        <td align="center">5</td>
+                        <td>Phát triển ứng dụng đa nền tảng</td>
+                        <td>Nguyễn Tiến Thành</td>
+                        <td>Chiều T4, Tuần: 25-32,34-42, Tiết 1 - 4 [12:30 - 15:50]</td>
+                        <td>D7-307</td>
+                    </tr>
+                    <tr>
+                        <td align="center">6</td>
+                        <td>Công nghệ Web và dịch vụ trực tuyến</td>
+                        <td>Đỗ Bá Lâm</td>
+                        <td>Sáng T4, Tuần: 25-32,34-42, Tiết 1 - 4 [06:45 - 10:05]</td>
+                        <td>D9-306</td>
+                    </tr>
+                    <tr>
+                        <td align="center">7</td>
+                        <td>Bóng chuyền 2</td>
+                        <td>Nguyễn Ngọc Ánh</td>
+                        <td>Chiều T5, Tuần: 25-32,34-42, 15:30 - 16:30</td>
+                        <td>san3</td>
+                    </tr>
+                    <tr>
+                        <td align="center">8</td>
+                        <td>Nhập môn An toàn thông tin</td>
+                        <td>Nguyễn Khanh Văn</td>
+                        <td>Sáng T5, Tuần: 25-32,34-42, Tiết 1 - 4 [06:45 - 10:05]</td>
+                        <td>TC-312</td>
+                    </tr>
+                    <tr>
+                        <td align="center">9</td>
+                        <td>Tâm lý học ứng dụng</td>
+                        <td>Lê Phương Thủy</td>
+                        <td>Sáng T6, Tuần: 26,28,30,32,35,37,39,41, Tiết 4 - 6 [09:20 - 11:50]</td>
+                        <td>D6-107</td>
+                    </tr>
+                    <tr>
+                        <td align="center">10</td>
+                        <td>Phân tích và thiết kế hệ thống</td>
+                        <td>Nguyễn Kiêm Hiếu</td>
+                        <td>Sáng T6, Tuần: 25-32,34-42, Tiết 1 - 3 [06:45 - 09:15]</td>
+                        <td>TC-312</td>
+                    </tr>
+                </tbody>
+            </table>
+            </section>
+        </div>
+
+        <br>
+
+        <section>
+            <p>
+                <i>tôi yêu môn này</i>
+            </p>
+        </section>
+    </main>
+
+    <hr>
+
+    <!-- Footer: MSSV và ngày tạo trang -->
+    <footer>
+        <p align="center">MSSV: 20235090 — Phạm Minh Hoàng | Ngày tạo: 11/03/2026 | Email: ahhzhzbbb@gmail.com</p>
+    </footer>
+
+</body>
+</html>

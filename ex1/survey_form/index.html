@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="container">
+        <h1 id="title">Student Lifestyle Survey</h1>
+        <p id="description">Help us improve campus life by answering this short survey.</p>
+
+        <form id="survey-form" action="#" method="post">
+            <div class="form-group">
+                <label id="name-label" for="name">Name</label>
+                <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    placeholder="Enter your full name"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label id="email-label" for="email">Email</label>
+                <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="Enter your academic email"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label id="number-label" for="number">Age</label>
+                <input
+                    id="number"
+                    name="age"
+                    type="number"
+                    min="16"
+                    max="80"
+                    placeholder="Enter your age (16-80)"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="dropdown">Current study level</label>
+                <select id="dropdown" name="study-level" required>
+                    <option value="" disabled selected>Select one option</option>
+                    <option value="undergraduate">Undergraduate</option>
+                    <option value="postgraduate">Postgraduate</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <fieldset class="form-group">
+                <legend>Would you recommend your program to others?</legend>
+                <label for="recommend-yes">
+                    <input id="recommend-yes" type="radio" name="recommend" value="yes">
+                    Yes
+                </label>
+                <label for="recommend-maybe">
+                    <input id="recommend-maybe" type="radio" name="recommend" value="maybe">
+                    Maybe
+                </label>
+                <label for="recommend-no">
+                    <input id="recommend-no" type="radio" name="recommend" value="no">
+                    No
+                </label>
+            </fieldset>
+
+            <fieldset class="form-group">
+                <legend>Which facilities do you use often? (Select all that apply)</legend>
+                <label for="facility-library">
+                    <input id="facility-library" type="checkbox" name="facilities" value="library">
+                    Library
+                </label>
+                <label for="facility-lab">
+                    <input id="facility-lab" type="checkbox" name="facilities" value="computer-lab">
+                    Computer Lab
+                </label>
+                <label for="facility-gym">
+                    <input id="facility-gym" type="checkbox" name="facilities" value="gym">
+                    Gym
+                </label>
+                <label for="facility-cafeteria">
+                    <input id="facility-cafeteria" type="checkbox" name="facilities" value="cafeteria">
+                    Cafeteria
+                </label>
+            </fieldset>
+
+            <div class="form-group">
+                <label for="comments">Additional comments</label>
+                <textarea
+                    id="comments"
+                    name="comments"
+                    rows="5"
+                    placeholder="Share anything you'd like us to know..."
+                ></textarea>
+            </div>
+
+            <button id="submit" type="submit">Submit Survey</button>
+        </form>
+    </main>
+</body>
+</html>

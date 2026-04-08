@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Exercises - Ex2 & Ex4</title>
+</head>
+<body>
+
+<div class="container">
+    <h1>Phạm Minh Hoàng - 20235090</h1>
+
+    <hr>
+
+    <h2>Ex2: Average Score Calculation</h2>
+    <div id="student-list"></div>
+    <div class="result-box">
+        <strong>Average Score:</strong> <span id="avg-score">Calculating...</span>
+    </div>
+
+    <hr>
+
+    <h2>Ex4: Dynamic List</h2>
+    <div class="input-group">
+        <input type="text" id="itemInput" placeholder="Nhập tên sinh viên mới...">
+        <button id="addBtn">Add to List</button>
+    </div>
+    <ul id="studentUl">
+        <!-- <li>Phạm Minh Hoàng</li> -->
+    </ul>
+</div>
+
+<script>
+    const students = [
+        { name: "An", score: 8.5 },
+        { name: "Bình", score: 4.0 },
+        { name: "Chi", score: 9.0 },
+        { name: "Dương", score: 7.5 }
+    ];
+
+    document.getElementById('student-list').innerHTML = 
+        "Danh sách: " + students.map(s => `${s.name} (${s.score})`).join(', ');
+
+    const scores = students.map(s => s.score); 
+    
+    const validScores = scores.filter(score => score >= 0);
+
+    const totalScore = validScores.reduce((sum, current) => sum + current, 0);
+    const average = totalScore / validScores.length;
+
+    document.getElementById('avg-score').innerText = average.toFixed(2);
+
+    const inputField = document.getElementById('itemInput');
+    const addBtn = document.getElementById('addBtn');
+    const ulList = document.getElementById('studentUl');
+
+    addBtn.addEventListener('click', function() {
+        const text = inputField.value.trim();
+
+        if (text !== "") {
+            const newLi = document.createElement('li');
+            
+            newLi.textContent = text;
+            
+            ulList.appendChild(newLi);
+            
+            inputField.value = "";
+            inputField.focus();
+        } else {
+            alert("Vui lòng nhập tên!");
+        }
+    });
+
+    inputField.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') addBtn.click();
+    });
+</script>
+
+</body>
+</html>
